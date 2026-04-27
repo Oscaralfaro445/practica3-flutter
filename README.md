@@ -179,7 +179,15 @@ Gestor de archivos nativo para macOS desarrollado con Swift y SwiftUI/AppKit. Pe
 | `open_file` | ^3.3.2 | Abrir archivos externos |
 | `permission_handler` | ^11.3.1 | Permisos Android/iOS |
 
-> 📸 **Capturas sugeridas:** Pantalla del explorador navegando carpetas, breadcrumb en acción, visor de imágenes con zoom, favoritos con archivos marcados, recientes con historial, menú contextual con opciones, cambio de tema Guinda/Azul, modo oscuro activado.
+> 📸 **Capturas** Pantalla del explorador navegando carpetas, breadcrumb en acción, visor de imágenes con zoom, favoritos con archivos marcados, recientes con historial, menú contextual con opciones, cambio de tema Guinda/Azul, modo oscuro activado.
+
+<details>
+<summary>Ver imagen</summary>
+<img width="1038" height="147" alt="image" src="https://github.com/user-attachments/assets/e44c4069-bd8c-487c-bc11-4cd07d912bb9" />
+<br />
+<img width="518" height="92" alt="image" src="https://github.com/user-attachments/assets/2399fcc6-3b67-4d34-ab0d-e0e0acaf415a" />
+<br />
+</details>
 
 ### Instalación
 
@@ -209,7 +217,15 @@ Aplicación nativa para iOS desarrollada con Swift y SwiftUI, compilada desde el
 - Temas Guinda (IPN) y Azul (ESCOM) con soporte claro/oscuro
 - Persistencia con Core Data para metadatos
 
-> 📸 **Capturas sugeridas:** Vista previa de cámara activa, botón de captura, grabador con contador de tiempo animado, galería con fotos capturadas, reproductor de audio con slider, solicitud de permisos, tema Azul ESCOM activado.
+> 📸 **Capturas** Vista previa de cámara activa, botón de captura, grabador con contador de tiempo animado, galería con fotos capturadas, reproductor de audio con slider, solicitud de permisos, tema Azul ESCOM activado.
+
+<details>
+<summary>Ver imagen</summary>
+<img width="1038" height="147" alt="image" src="https://github.com/user-attachments/assets/e44c4069-bd8c-487c-bc11-4cd07d912bb9" />
+<br />
+<img width="518" height="92" alt="image" src="https://github.com/user-attachments/assets/2399fcc6-3b67-4d34-ab0d-e0e0acaf415a" />
+<br />
+</details>
 
 ### Requisitos técnicos
 
@@ -236,70 +252,6 @@ Se desarrollaron dos aplicaciones Flutter multiplataforma (iOS y Android) implem
 
 #### Arquitectura (Clean Architecture)
 
-# Ejercicio 4: Flutter Multiplataforma
-
-**ESCOM — Instituto Politécnico Nacional**  
-Desarrollo de Aplicaciones Móviles Nativas
-
-## Descripción
-
-Aplicación multiplataforma desarrollada con Flutter que implementa
-cámara fotográfica y grabación de audio, con persistencia local
-y soporte para iOS y Android.
-
-## Características
-
-- Captura de fotos con vista previa en tiempo real
-- Grabación de audio con contador de tiempo
-- Galería con reproductor de audio integrado
-- Dos temas: Guinda (IPN) y Azul (ESCOM)
-- Modo claro y oscuro
-- Almacenamiento local con Hive (sin conexión a internet)
-
-## Arquitectura
-
-Clean Architecture con tres capas:
-
-- **Presentación**: Screens, Widgets, Providers
-- **Dominio**: Entidades (PhotoModel, RecordingModel)
-- **Datos**: Repositorios Hive, acceso a hardware
-
-## Tecnologías
-
-| Paquete              | Propósito             |
-| -------------------- | --------------------- |
-| `provider`           | Gestión de estado     |
-| `camera`             | Acceso a cámara       |
-| `flutter_sound`      | Grabación de audio    |
-| `audioplayers`       | Reproducción de audio |
-| `hive`               | Almacenamiento local  |
-| `permission_handler` | Permisos Android/iOS  |
-
-## Instalación
-
-```bash
-git clone https://github.com/TuUsuario/practica3-flutter.git
-cd practica3-flutter
-flutter pub get
-dart run build_runner build --delete-conflicting-outputs
-flutter run
-```
-
-## APK
-
-El APK compilado se encuentra en:
-`build/app/outputs/flutter-apk/app-release.apk`
-
-#### Decisiones de arquitectura
-
-**Provider** fue elegido como gestor de estado por su simplicidad y soporte oficial del equipo de Flutter. Cada feature tiene su propio provider aislado (`ExplorerProvider`) que maneja exclusivamente el estado de esa funcionalidad.
-
-**Hive** fue elegido sobre SQLite por su rendimiento en operaciones de lectura/escritura de objetos Dart y su API más sencilla para este caso de uso (favoritos y recientes no requieren consultas complejas).
-
-**Clean Architecture** separa claramente las responsabilidades: la capa de dominio (`FavoriteModel`, `RecentModel`) no depende de Flutter ni de Hive, lo que facilita el testing y el mantenimiento.
-
-> 📸 **Capturas sugeridas:** Explorador mostrando carpetas y archivos con íconos de color, breadcrumb con ruta completa, búsqueda en tiempo real filtrando archivos, visor de imagen con zoom, visor de código/texto, favoritos con lista de archivos marcados, recientes con tiempo relativo, menú contextual con opciones de renombrar/eliminar, diálogo de nueva carpeta, tema Azul ESCOM, modo oscuro.
-
 ---
 
 ### Opción B — Cámara y Micrófono Flutter
@@ -317,7 +269,15 @@ El APK compilado se encuentra en:
 
 **flutter_sound** maneja la grabación de audio en formato AAC, compatible con Android e iOS sin configuración adicional.
 
-> 📸 **Capturas sugeridas:** Vista previa de cámara en tiempo real, solicitud de permiso de cámara, captura de foto con snackbar de confirmación, pantalla del grabador con indicador animado, contador de tiempo durante grabación, galería con grid de fotos, visor de foto a pantalla completa con zoom, reproductor de audio con slider de progreso, selector de tema Guinda/Azul, modo oscuro activado.
+> 📸 **Capturas** Vista previa de cámara en tiempo real, solicitud de permiso de cámara, captura de foto con snackbar de confirmación, pantalla del grabador con indicador animado, contador de tiempo durante grabación, galería con grid de fotos, visor de foto a pantalla completa con zoom, reproductor de audio con slider de progreso, selector de tema Guinda/Azul, modo oscuro activado.
+
+<details>
+<summary>Ver imagen</summary>
+<img width="1038" height="147" alt="image" src="https://github.com/user-attachments/assets/e44c4069-bd8c-487c-bc11-4cd07d912bb9" />
+<br />
+<img width="518" height="92" alt="image" src="https://github.com/user-attachments/assets/2399fcc6-3b67-4d34-ab0d-e0e0acaf415a" />
+<br />
+</details>
 
 ---
 
