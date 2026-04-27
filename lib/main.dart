@@ -10,6 +10,7 @@ import 'features/recorder/presentation/screens/recorder_screen.dart';
 import 'features/gallery/presentation/screens/gallery_screen.dart';
 import 'features/camera/presentation/camera_provider.dart';
 import 'features/recorder/presentation/recorder_provider.dart';
+import 'features/gallery/presentation/gallery_provider.dart';
 
 Future<void> main() async {
   // Necesario antes de llamar cualquier código nativo
@@ -32,6 +33,7 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
         ChangeNotifierProvider(create: (_) => CameraProvider()),
         ChangeNotifierProvider(create: (_) => RecorderProvider()),
+        ChangeNotifierProvider(create: (_) => GalleryProvider()),
       ],
       child: const MyApp(),
     ),
