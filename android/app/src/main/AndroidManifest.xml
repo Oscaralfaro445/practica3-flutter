@@ -1,4 +1,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Permisos de cámara -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Permisos de micrófono -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Permisos de almacenamiento (Android 12 e inferior) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <!-- Permisos de almacenamiento (Android 13+) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <!-- Indica que la cámara es necesaria pero no obligatoria para instalar -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    
     <application
         android:label="practica3_flutter"
         android:name="${applicationName}"

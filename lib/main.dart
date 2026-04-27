@@ -3,9 +3,13 @@ import 'package:provider/provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import 'core/theme/theme_provider.dart';
+import 'features/camera/domain/photo_model.dart';
+import 'features/recorder/domain/recording_model.dart';
 import 'features/camera/presentation/screens/camera_screen.dart';
 import 'features/recorder/presentation/screens/recorder_screen.dart';
 import 'features/gallery/presentation/screens/gallery_screen.dart';
+import 'features/camera/presentation/camera_provider.dart';
+import 'features/recorder/presentation/recorder_provider.dart';
 
 Future<void> main() async {
   // Necesario antes de llamar cualquier código nativo
@@ -14,11 +18,21 @@ Future<void> main() async {
   // Inicializar base de datos local Hive
   await Hive.initFlutter();
 
+  // Registrar adaptadores ANTES de abrir cualquier caja
+  Hive.registerAdapter(PhotoModelAdapter());
+  Hive.registerAdapter(RecordingModelAdapter());
+
+  // Abrir las cajas (equivalente a tablas en una base de datos)
+  await Hive.openBox<PhotoModel>('photos');
+  await Hive.openBox<RecordingModel>('recordings');
+
   runApp(
-    // ChangeNotifierProvider pone el ThemeProvider disponible
-    // para TODOS los widgets descendientes de MyApp
-    ChangeNotifierProvider(
-      create: (_) => ThemeProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => CameraProvider()),
+        ChangeNotifierProvider(create: (_) => RecorderProvider()),
+      ],
       child: const MyApp(),
     ),
   );
